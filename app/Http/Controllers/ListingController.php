@@ -12,8 +12,9 @@ class ListingController extends Controller
     public function index() {
         //dd(request('tag'));
         return view('listings.index', [
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
             // 'listings' => Listing::all() shows in random order
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get() // gets all listings but shows them in order
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->get() gets all listings but shows them in order
         ]);      
     }
 
