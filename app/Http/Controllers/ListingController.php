@@ -12,7 +12,7 @@ class ListingController extends Controller
         //dd(request('tag'));
         return view('listings.index', [
             // 'listings' => Listing::all() shows in random order
-            'listings' => Listing::latest()->filter(request(['tag']))->get() // gets all listings but shows them in order
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get() // gets all listings but shows them in order
         ]);      
     }
 
