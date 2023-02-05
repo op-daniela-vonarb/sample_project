@@ -16,14 +16,6 @@ use Database\Factories\ListingFactory;
 |
 */
 
-// all listings
-Route::get('/', [ListingController::class, 'index']);
-
-
-// single listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
-
 // Common Resource Routes:
 // index - show all listings
 // show - show single listing
@@ -32,3 +24,11 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // edit - show form to edit listing
 // update - update listing
 // destroy - delete listing
+
+
+// all listings
+Route::get('/', [ListingController::class, 'index']);
+
+
+// single listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
